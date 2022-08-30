@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Story from '$lib/components/Story.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -10,11 +11,7 @@
 <h1>Hacker News Next</h1>
 <div>
 	{#each data.stories as story}
-		<div>
-			<h2>{story.title}</h2>
-			<p>{story.id}</p>
-			<a href={story.url}>{story.url}</a>
-		</div>
+		<Story {story} />
 	{/each}
 </div>
 

@@ -1,29 +1,16 @@
+import type { Item } from '$typings/index';
+import { getItem, getStories } from '$utils/api';
 import type { PageLoad } from './$types';
 
-const API_URL = 'https://hacker-news.firebaseio.com/v0';
 const NUM_ITEMS = 30;
 
-export interface Story {
-	id: number;
-	url: string;
-	title: string;
-}
-
-export const load: PageLoad = async () => {
+export const load: PageLoad = async ({ request }) => {
 	// Fetch top story ids
-	const res = await fetch(`${API_URL}/topstories.json`);
-	const topStories = await res.json();
+	const storyIDs = await getStories('top', 3);
+	console.log('items', storyIDs);
 	// Fetch top stories
-	const stories: Story[] = await Promise.all(
-		topStories.slice(0, NUM_ITEMS).map(async (id: number) => {
-			const res = await fetch(`${API_URL}/item/${id}.json`);
-			const story = await res.json();
-			return {
-				id: story.id,
-				url: story.url,
-				title: story.title
-			};
-		})
+	const stories: Item[] = await Promise.all(
+		storyIDs.slice(0, NUM_ITEMS).map(async (id: number) => await getItem(id))
 	);
 
 	return { stories };

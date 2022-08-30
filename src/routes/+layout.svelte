@@ -1,8 +1,11 @@
 <script lang="ts">
-	import Footer from '$lib/footer/Footer.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
+	import SvelteTheme from 'svelte-themes/SvelteTheme.svelte';
 </script>
 
 <svelte:head>
+	<link rel="stylesheet" href={`/main.css`} />
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 		html {
@@ -14,7 +17,9 @@
 		}
 	</style>
 </svelte:head>
+<SvelteTheme />
 <main>
 	<slot />
 </main>
+<ThemeSwitch />
 <Footer />
