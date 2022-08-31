@@ -1,32 +1,19 @@
 <script lang="ts">
 	export let href: string | undefined;
+	export let target: string | undefined = undefined;
 </script>
 
-<a {href}>
+<a {href} {target}>
 	<slot />
 </a>
 
 <style>
 	a {
 		color: inherit;
-		text-decoration: none;
-		position: relative;
+		text-decoration: underline #ffffff00 0.1em;
+		transition: text-decoration-color 300ms;
 	}
-	a::before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		background-color: transparent;
-		transform: scaleX(0);
-		transition: transform 0.3s ease-in-out;
-	}
-	a:hover::before {
-		transform: scaleX(1);
-		border-radius: 2px;
-		background-color: var(--orange7);
-		transform-origin: bottom left;
+	a:hover {
+		text-decoration-color: var(--orange7);
 	}
 </style>
