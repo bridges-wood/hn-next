@@ -5,7 +5,7 @@
 	import Story from './Story.svelte';
 
 	let intersecting: boolean = false;
-	let element: HTMLElement;
+	// let element: HTMLElement;
 	export let stories: Item[] = [];
 	let newBatch: Item[] = [];
 	let page = 1;
@@ -30,7 +30,7 @@
 
 <div class="stories__container">
 	{#each stories as story}
-		<Story {story} />
+		<Story data={story} />
 	{/each}
 	<!-- <IntersectionObserver {element} bind:intersecting>
 		<div bind:this={element} />
@@ -40,7 +40,7 @@
 <style>
 	.stories__container {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 		gap: 10px;
 	}
 </style>

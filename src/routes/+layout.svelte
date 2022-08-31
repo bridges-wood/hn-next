@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
-	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
+	import Header from '$lib/components/Header.svelte';
 	import SvelteTheme from 'svelte-themes/SvelteTheme.svelte';
 </script>
 
@@ -18,8 +18,15 @@
 	</style>
 </svelte:head>
 <SvelteTheme />
-<main>
+<div class="main-container" data-sveltekit-prefetch>
+	<Header />
 	<slot />
-</main>
-<ThemeSwitch />
-<Footer />
+	<Footer />
+</div>
+
+<style>
+	.main-container {
+		display: grid;
+		place-items: center;
+	}
+</style>
