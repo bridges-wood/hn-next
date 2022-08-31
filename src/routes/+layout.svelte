@@ -2,6 +2,9 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import SvelteTheme from 'svelte-themes/SvelteTheme.svelte';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 </script>
 
 <svelte:head>

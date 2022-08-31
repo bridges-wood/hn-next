@@ -4,9 +4,10 @@
 	import Poll from '$lib/components/items/Poll.svelte';
 	import PollOpt from '$lib/components/items/PollOpt.svelte';
 	import Story from '$lib/components/items/Story.svelte';
-	import type { PageData } from './$types';
+	import type { Errors, PageData } from './$types';
 
 	export let data: PageData;
+	export let errors: Errors;
 </script>
 
 <svelte:head>
