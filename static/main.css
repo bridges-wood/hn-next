@@ -16,10 +16,28 @@
   --primarySolidContrast: var(--white);
   --primaryLowContrastText: var(--orange-11);
   --primaryHighContrastText: var(--orange-12);
+  --neutralAppBackground: var(--gray1);
+  --neutralSubtleBackground: var(--gray2);
+  --neutralBackground: var(--gray3);
+  --neutralHover: var(--gray4);
+  --neutralActive: var(--gray5);
+  --neutralSubtleContrast: var(--gray6);
+  --neutralBorder: var(--gray7);
+  --neutralBorderHover: var(--gray8);
+  --neutralSolid: var(--gray9);
+  --neutralSolidHover: var(--gray10);
+  --neutralSolidContrast: var(--white);
+  --neutralLowContrastText: var(--gray11);
+  --neutralHighContrastText: var(--gray12);
+  --breakpointXS: 650px;
+  --breakpointSM: 960px;
+  --breakpointMD: 1280px;
+  --breakpointLG: 1440px;
+  --breakpointXL: 1920px;
 }
 
 [data-theme="light"] {
-  --background: var(--white);
+  --background: var(--neutralAppBackground);
   --backgroundAlpha: rgba(255, 255, 255, 0.8);
   --foreground: var(--black);
   --backgroundContrast: var(--black);
@@ -27,7 +45,7 @@
 }
 
 [data-theme="dark"] {
-  --background: var(--black);
+  --background: var(--neutralAppBackground);
   --backgroundAlpha: rgba(0, 0, 0, 0.8);
   --foreground: var(--white);
   --backgroundContrast: var(--white);
