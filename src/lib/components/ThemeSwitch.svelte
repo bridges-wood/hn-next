@@ -88,7 +88,6 @@
 	input:checked + label::after {
 		left: 54px;
 		transform: translateX(-100%);
-		background: red;
 	}
 
 	label,
