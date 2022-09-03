@@ -36,3 +36,18 @@ export const formatTimeDifference = (time: number): string => {
 
 	return 'just now';
 };
+
+/**
+ * Converts a given time difference to a human-readable string.
+ * @param time The time to convert.
+ * @returns A human-readable string representing the amount of time that has passed since the given date.
+ */
+export const calculateAndFormatTimeDifference = (time: Item['time']): string => {
+	try {
+		const timeDifference = calculateTimeDifference(time);
+		return formatTimeDifference(timeDifference);
+	} catch (error) {
+		console.error(error);
+		return 'unknown';
+	}
+};
