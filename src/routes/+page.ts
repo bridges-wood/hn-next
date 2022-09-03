@@ -7,7 +7,6 @@ const NUM_ITEMS = 30;
 export const load: PageLoad = async ({ fetch }) => {
 	// Fetch top story ids
 	const itemIDs = await getStoryIDs('top', NUM_ITEMS, 0, fetch);
-	console.log('items', itemIDs);
 	// Fetch top stories
 	const items: Item[] = await Promise.all(
 		itemIDs.slice(0, NUM_ITEMS).map(async (id: number) => await getItem(id, fetch))
