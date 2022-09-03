@@ -8,17 +8,17 @@ type Fetch = (info: RequestInfo, init?: RequestInit | undefined) => Promise<Resp
 
 export const getItem = async (id: Item['id'], fetchFunc: Fetch = fetch): Promise<Item> => {
 	const res = await fetchFunc(`${HN_URL}/item/${id}.json`);
-	return await res.json();
+	return res.json();
 };
 
 export const getUser = async (id: User['id'], fetchFunc: Fetch = fetch): Promise<User> => {
 	const res = await fetchFunc(`${HN_URL}/user/${id}.json`);
-	return await res.json();
+	return res.json();
 };
 
 export const getMaxItemID = async (fetchFunc: Fetch = fetch): Promise<Item['id']> => {
 	const res = await fetchFunc(`${HN_URL}/maxitem.json`);
-	return await res.json();
+	return res.json();
 };
 
 /**
