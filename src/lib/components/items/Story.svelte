@@ -1,44 +1,36 @@
 <script lang="ts">
 	import AnimatedLink from '$lib/components/AnimatedLink.svelte';
 	import type { Item } from '$typings/index';
-	import { calculateTimeDifference, formatTimeDifference } from '$utils/time';
+	import { calculateAndFormatTimeDifference } from '$utils/time';
 
 	export let data: Item;
-	let formattedTimeDifference: string;
-	try {
-		const timeGap = calculateTimeDifference(data.time);
-		formattedTimeDifference = formatTimeDifference(timeGap);
-	} catch (error) {
-		console.log(error);
-	}
+	const timeDifference = calculateAndFormatTimeDifference(data.time);
+	const { title, url, score, by: author, descendants, id } = data;
 </script>
 
 <div class="story">
 	<h3 class="story__title">
-		<AnimatedLink href={data.url}>
-			{data.title}
+		<AnimatedLink href={url}>
+			{title}
 		</AnimatedLink>
 	</h3>
 	<small class="story__subtext">
-		{#if data.score}
-			{data.score} {data.score === 1 ? 'point' : 'points'}
+		{#if score}
+			{score} {score === 1 ? 'point' : 'points'}
 		{/if}
-		{#if data.by}
-			by {data.by}
+		{#if author}
+			by {author}
 		{/if}
-		{#if formattedTimeDifference}
-			{formattedTimeDifference}
+		{#if timeDifference}
+			{timeDifference}
 		{/if}
-		{#if data.descendants}
-			| <AnimatedLink href={`/items/${data.id}`}>
-				{data.descendants}
-				{data.descendants === 1 ? 'comment' : 'comments'}
+		{#if descendants}
+			| <AnimatedLink href={`/items/${id}`}>
+				{descendants}
+				{descendants === 1 ? 'comment' : 'comments'}
 			</AnimatedLink>
 		{/if}
 	</small>
-	<!-- {#if story.text}
-		{@html story.text}
-	{/if} -->
 </div>
 
 <style>
