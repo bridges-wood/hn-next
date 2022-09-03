@@ -44,11 +44,13 @@
 	}
 
 	.title-section h1 {
+		font-family: 'JetBrains Mono', monospace;
 		font-size: 2.5rem;
 		margin: 0;
 	}
 
 	.title-section p {
+		font-family: 'Ubuntu', sans-serif;
 		font-size: 1.25rem;
 		margin: 0;
 	}
