@@ -19,11 +19,14 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 	</style>
+	<link rel="icon" href="/favicon.ico" />
 </svelte:head>
 <SvelteTheme />
 <div class="main-container" data-sveltekit-prefetch>
 	<Header />
-	<slot />
+	<main>
+		<slot />
+	</main>
 	<Footer />
 </div>
 
@@ -31,5 +34,13 @@
 	.main-container {
 		display: grid;
 		place-items: center;
+	}
+
+	main {
+		max-width: 800px;
+		width: 100%;
+		display: grid;
+		place-items: center;
+		min-height: calc(100vh - 40px);
 	}
 </style>
