@@ -23,4 +23,8 @@
 		align-items: center;
 		gap: 20px;
 	}
+
+	:global(.item-list > *) {
+		width: 100%;
+	}
 </style>
