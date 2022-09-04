@@ -5,6 +5,7 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+
 	const timeDifference = calculateAndFormatTimeDifference(data.item.time);
 	const { title, url, score, by: author, descendants, id, type } = data.item;
 </script>
@@ -18,7 +19,7 @@
 		{score} {score === 1 ? 'point' : 'points'}
 	{/if}
 	{#if author}
-		by {author}
+		by <AnimatedLink href={`/users/${author}`}>{author}</AnimatedLink>
 	{/if}
 	{#if timeDifference}
 		{timeDifference}
@@ -31,7 +32,9 @@
 	{/if}
 </small>
 {#if data?.item.text}
-	{@html data.item.text}
+	<div class="text">
+		{@html data.item.text}
+	</div>
 {/if}
 {#if data?.kids}
 	<div class="comments">
@@ -48,6 +51,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+	}
+
+	.text {
+		max-width: 80ch;
 	}
 
 	.item__subtext {

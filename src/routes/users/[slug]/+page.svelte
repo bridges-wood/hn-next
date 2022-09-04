@@ -17,6 +17,8 @@
 	{@html about}
 {/if}
 {#if data?.submitted}
-	<h2>Recently Submitted</h2>
-	<ItemList items={data.submitted.slice(0, 5)} />
+	<div>
+		<h2>Recently Submitted</h2>
+		<ItemList items={data.submitted.filter((item) => item.type === 'story')} />
+	</div>
 {/if}

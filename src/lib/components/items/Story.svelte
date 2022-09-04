@@ -10,7 +10,7 @@
 
 <div class="story">
 	<h3 class="story__title">
-		<AnimatedLink href={url}>
+		<AnimatedLink href={url !== undefined ? url : `/items/${id}`}>
 			{title}
 		</AnimatedLink>
 	</h3>
@@ -19,7 +19,7 @@
 			{score} {score === 1 ? 'point' : 'points'}
 		{/if}
 		{#if author}
-			by {author}
+			by <AnimatedLink href={`/users/${author}`}>{author}</AnimatedLink>
 		{/if}
 		{#if timeDifference}
 			{timeDifference}

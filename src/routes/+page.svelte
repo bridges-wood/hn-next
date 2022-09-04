@@ -19,7 +19,7 @@
 		<AnimatedLink href="https://news.ycombinator.com/news">Hacker News</AnimatedLink>, redesigned.
 	</p>
 </div>
-<main>
+<div class="items">
 	{#each data?.items as child}
 		{#if child.type === 'story'}
 			<Story data={child} />
@@ -34,7 +34,7 @@
 			<PollOpt data={child} />
 		{/if}
 	{/each}
-</main>
+</div>
 
 <style>
 	.title-section {
@@ -54,19 +54,9 @@
 		font-size: 1.25rem;
 		margin: 0;
 	}
-	main {
+	.items {
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
-	}
-	@media (min-width: 1280px) {
-		main {
-			max-width: 1280px;
-		}
-	}
-	@media (min-width: 1400px) {
-		main {
-			max-width: 1400px;
-		}
 	}
 </style>

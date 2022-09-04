@@ -37,10 +37,21 @@
 	}
 
 	main {
-		max-width: 800px;
+		max-width: 100%;
 		width: 100%;
 		display: grid;
 		place-items: center;
 		min-height: calc(100vh - 40px);
+	}
+
+	@media (min-width: 1280px) {
+		main {
+			max-width: 1280px;
+		}
+	}
+	@media (min-width: 1400px) {
+		main {
+			max-width: 1400px;
+		}
 	}
 </style>
