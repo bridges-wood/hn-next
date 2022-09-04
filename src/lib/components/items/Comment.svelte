@@ -25,7 +25,7 @@
 		padding: 20px 12px;
 		border-radius: 12px;
 		background-color: var(--primarySubtleBackground);
-		width: 100%;
+		max-width: 80ch;
 	}
 
 	.comment-info {
