@@ -10,7 +10,7 @@
 <style>
 	a {
 		color: inherit;
-		text-decoration: underline #ffffff00 0.2rem;
+		text-decoration: underline #ffffff00 0.1em;
 		transition: text-decoration-color 300ms;
 	}
 	a:hover {
