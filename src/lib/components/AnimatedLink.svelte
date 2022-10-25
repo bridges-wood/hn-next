@@ -1,9 +1,12 @@
 <script lang="ts">
 	export let href: string | undefined;
 	export let target: string | undefined = undefined;
+	export let rel: string | undefined = undefined;
+	let clazz: string | undefined = undefined;
+	export {clazz as class};
 </script>
 
-<a {href} {target}>
+<a {href} {target} {rel} class={clazz}>
 	<slot />
 </a>
 

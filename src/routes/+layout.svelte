@@ -34,6 +34,7 @@
 	.main-container {
 		display: grid;
 		place-items: center;
+		width: 100%;
 	}
 
 	main {
@@ -42,6 +43,12 @@
 		display: grid;
 		place-items: center;
 		min-height: calc(100vh - 40px);
+	}
+
+	@media (max-width: 768px) {
+		main {
+			width: 90%;
+		}
 	}
 
 	@media (min-width: 1280px) {

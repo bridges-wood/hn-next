@@ -20,9 +20,9 @@
 	</p>
 </div>
 <div class="items">
-	{#each data?.items as child}
+	{#each data?.items as child, index}
 		{#if child.type === 'story'}
-			<Story data={child} />
+			<Story data={child} index={index}/>
 		{/if}
 		{#if child.type === 'comment'}
 			<Comment data={child} />

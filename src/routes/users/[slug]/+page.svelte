@@ -14,7 +14,9 @@
 
 <h1>{id}</h1>
 {#if about}
-	{@html about}
+	<div id="about">
+		{@html about}
+	</div>
 {/if}
 {#if data?.submitted}
 	<div>
@@ -22,3 +24,11 @@
 		<ItemList items={data.submitted.filter((item) => item.type === 'story')} />
 	</div>
 {/if}
+
+<style>
+	#about {
+		margin: 20px 0;
+		max-width: 80ch;
+		width: 100%;
+	}
+</style>
